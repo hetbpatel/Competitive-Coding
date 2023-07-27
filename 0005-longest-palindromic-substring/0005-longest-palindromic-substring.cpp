@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/longest-palindromic-substring/description/
+
 class Solution {
 private: 
     bool check(string &s, int i, int j){
