@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/n-queens/
+
 class Solution {
 public:
     void addSol(vector<vector<int>>& board, vector<vector<string>>& ans, int n) {
