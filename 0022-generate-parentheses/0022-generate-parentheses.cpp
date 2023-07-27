@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/generate-parentheses/description/
+
 // https://www.youtube.com/watch?v=WW1rYrR3tTI&ab_channel=CodewithAlisha
 // && Chatgpt
 // In the generateParenthesis function, the initial call to fnc passes 0 for both open and close arguments. However, it should be 1 for the open argument because the first character in the generated string is an opening parenthesis.
