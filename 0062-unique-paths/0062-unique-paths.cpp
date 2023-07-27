@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/unique-paths/
+
 // https://www.youtube.com/watch?v=iOeoZbHxQqI&ab_channel=CodewithAlisha
 class Solution {
 public:
@@ -9,5 +11,20 @@ public:
             }
         }
         return dp[m-1][n-1];
+    }
+};
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+class Solution {
+public:
+    int uniquePaths(int m, int n) {
+        vector<int> cur(n, 1);
+        for (int i = 1; i < m; i++) {
+            for (int j = 1; j < n; j++) {
+                cur[j] += cur[j - 1];
+            }
+        }
+        return cur[n - 1];
     }
 };
