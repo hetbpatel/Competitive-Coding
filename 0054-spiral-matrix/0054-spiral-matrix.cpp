@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/spiral-matrix/description/
+
 class Solution {
 public:
     vector<int> spiralOrder(vector<vector<int>>& matrix) {
@@ -36,6 +38,48 @@ public:
             }
             startingCol++;
         }
+        return ans;
+    }
+};
+
+/*--------------------------------------------------------------------------------------------------------------------------*/
+
+class Solution {
+public:
+    vector<int> spiralOrder(vector<vector<int>>& matrix) {
+        int dx[] = {0,1,0,-1};
+        int dy[] = {1,0,-1,0};
+        int R = matrix.size();
+        int C = matrix[0].size();
+
+        vector<int>ans;
+        int r=0,c=0,dis=0;
+        bool vis[R][C];
+
+        memset(vis,false,sizeof(vis));
+
+        for(int i=0;i<R*C;i++)
+        {
+            ans.push_back(matrix[r][c]);
+            vis[r][c] = true;
+
+            int x = r + dx[dis];
+            int y = c + dy[dis];
+
+            if(x>=0 and y>=0 and x<R and y<C and !vis[x][y])
+            {
+                r = x;
+                c = y;
+            }
+
+            else
+            {
+                dis = (dis+1)%4;
+                r = r + dx[dis];
+                c = c + dy[dis];
+            }
+        }
+
         return ans;
     }
 };
